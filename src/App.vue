@@ -1,19 +1,19 @@
 <template>
-    <div id="text">
-        <h3>123</h3>
-    </div>
-</template>
+    <div id="app">
+        <h1 class="#text">HEY</h1>
+        <h1 class="#text">HEY</h1>
 
-<!--<script>-->
-<!--    export default {-->
-<!--        name: "App",-->
-<!--        data(){-->
-<!--            return{-->
-<!--                text: 'HEY'-->
-<!--            }-->
-<!--        }-->
-<!--    }-->
-<!--</script>-->
+        <h1 class="#text">HEY</h1>
+        <h1 class="#text">HEY</h1>
+    </div>
+
+</template>
+<script>
+    export default {
+        name: "App"
+    }
+</script>
+
 
 <style lang="scss">
     @import './styles/app';
