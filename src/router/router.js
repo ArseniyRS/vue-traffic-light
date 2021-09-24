@@ -1,5 +1,6 @@
-import VueRouter, {createRouter, createWebHistory} from "vue-router";
-import Light from "../components/Light";
+import  {createRouter, createWebHashHistory} from "vue-router";
+import Light from "@c/Light";
+import {PATH_GREEN, PATH_RED, PATH_YELLOW} from "@/constatnts/routes";
 
 
 const routes = [
@@ -8,22 +9,22 @@ const routes = [
         component: Light
     },
     {
-        path: '/red',
+        path: PATH_RED,
         component: Light
     },
     {
-        path: '/yellow',
+        path: PATH_YELLOW,
         component: Light
     },
     {
-        path: '/green',
+        path: PATH_GREEN,
         component: Light
     }
 ]
 
 const router = createRouter({
     routes,
-    history: createWebHistory(process.env.BASE_URL)
+    history: createWebHashHistory()
 })
 
 export default router

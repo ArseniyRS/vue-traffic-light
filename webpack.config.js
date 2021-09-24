@@ -13,8 +13,15 @@ const isProd = !isDev
 
 const optimization = () => {
     const config = {
+        runtimeChunk: 'single',
         splitChunks: {
-            chunks: 'all'
+            cacheGroups: {
+                vendor: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'vendors',
+                    chunks: 'all'
+                }
+            }
         }
     }
 
@@ -35,10 +42,6 @@ const plugins = () => {
     const base = [
         new VueLoaderPlugin(),
         new CleanWebpackPlugin(),
-        new webpack.DefinePlugin({
-            __VUE_OPTIONS_API__: false,
-            __VUE_PROD_DEVTOOLS__: false
-        }),
         new MiniCssExtractPlugin({
             filename: "css/[name].css"
         }),
@@ -78,9 +81,9 @@ module.exports = {
         rules: [
             {
                 test: /\.js$/,
+                exclude: /node_modules/,
                 use: {
                     loader: "babel-loader",
-                    exclude: /node_modules/,
                     options: {
                         presets: [["@babel/preset-env", {"corejs": 3}]],
                         plugins: [

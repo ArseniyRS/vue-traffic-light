@@ -1,16 +1,9 @@
 <template>
-    <div id="app">
-        <h1 class="#text">HEY</h1>
-        <h1 class="#text">HEY</h1>
-
-        <h1 class="#text">HEY</h1>
-        <h1 class="#text">HEY</h1>
-    </div>
-
+       <router-view></router-view>
 </template>
 <script>
     export default {
-        name: "App"
+        name: "App",
     }
 </script>
 
