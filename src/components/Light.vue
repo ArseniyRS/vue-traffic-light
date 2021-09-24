@@ -12,7 +12,7 @@
     export default {
         data() {
             return {
-                color: this.getColor(),
+                color: localStorage.getItem('color') || this.getColor(),
                 time: localStorage.getItem('time') || this.setTime(),
                 isGreenFinishing: false
             }
@@ -60,6 +60,7 @@
                 if (this.time > 1) {
                     this.time--
                     localStorage.setItem('time', this.time)
+                    localStorage.setItem('color', this.color)
                 } else
                     this.chooseRoute()
             }, 1000)
