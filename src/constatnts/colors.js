@@ -1,3 +1,3 @@
-export const RED = '#fc6a6a'
-export const YELLOW = '#ffe0a1'
-export const GREEN = '#6aad6a'
+export const RED = '#ff8e8e'
+export const YELLOW = '#ffdfa8'
+export const GREEN = '#83af83'
